@@ -79,7 +79,7 @@ void PlusApple(Game &g) //func of placing Apples
     g.Apple.Y = y; //remember the position of the Apple
     SetConsoleCursorPosition(hConsole, g.Apple); //move the cursor to this position
     SetConsoleTextAttribute(hConsole,0x0c); //Apple factory color
-    printf("%c", 35); //drawing the Apple
+    printf("%c", 36); //drawing the Apple
 
 }
 
@@ -111,12 +111,11 @@ void SnakeBeginning()
 }
 void WALL_2() //information shown on the wall
 {
-    SetColor(LightGreen, Black); GotoXY(20,0); cout << "Snake game by rock8forever(in Github)" << endl;
-    GotoXY(64,2); cout << "Data:" << endl;
-    GotoXY(64,3); cout << "Apples:0" << endl;
-    GotoXY(64,4); cout <<  "Length:3"<< endl;
-    GotoXY(64,5); cout <<  "Speed:0" << endl;
-    GotoXY(64,7); cout << "Controls:" <<  endl;
+    SetColor(LightGreen, Black); GotoXY(14,0); cout << "Snake game by rock8forever(in Github)" << endl;
+    GotoXY(64,2); cout << "Apples:0" << endl;
+    GotoXY(64,3); cout <<  "Length:3"<< endl;
+    GotoXY(64,4); cout <<  "Speed:0" << endl;
+    GotoXY(64,6); cout << "Controls:" <<  endl;
     GotoXY(64,8); cout << "Esc:Exit" <<  endl;
     GotoXY(64,9); cout << "P:Pause" <<  endl;
     GotoXY(64,10); cout <<"S:Start" <<  endl;
@@ -289,23 +288,22 @@ int main()
                 ++count;
                 g.pause--;
                 SetColor(LightGreen, Black);
-                GotoXY(64,2);cout <<  "Data:" << endl ;
-                GotoXY(64,3); cout << "Apples:" << count << endl;
-                GotoXY(64,4); cout << "Length" << g.python.PCount << endl;
-                GotoXY(64,5); cout << "Speed:" << g.pause << endl;
-                GotoXY(64,7); cout << "Controls:" << endl;
-                GotoXY(64,8); cout << "Esc:Exit" << endl;
-                GotoXY(64,9); cout << "P:Pause" << endl;
-                GotoXY(64,10); cout << "S:Start" << endl;
-                GotoXY(64,11); cout << "L:Level" << endl;
-                GotoXY(64,13); printf("%c%c",47,92); cout << ":Up" <<endl;
-                GotoXY(64,14); printf("%c%c",92,47); cout << ":Down" <<endl;
-                GotoXY(64,15); printf("%c",60); cout << ":Left" <<endl;
-                GotoXY(64,16); printf("%c",62); cout << ":Right" <<endl;
+                GotoXY(64,2); cout << "Apples: " << count << endl;
+                GotoXY(64,3); cout << "Length: " << g.python.PCount << endl;
+                GotoXY(64,4); cout << "Speed: " << g.pause << endl;
+                GotoXY(64,6); cout << "Controls:" <<  endl;
+                GotoXY(64,8); cout << "Esc:Exit" <<  endl;
+                GotoXY(64,9); cout << "P:Pause" <<  endl;
+                GotoXY(64,10); cout <<"S:Start" <<  endl;
+                GotoXY(64,11); cout <<"L:Level" <<  endl;
+                GotoXY(64,13); printf("%c%c",47,92); cout << ":Up" << endl;
+                GotoXY(64,14); printf("%c%c",92,47); cout << ":Down" << endl;
+                GotoXY(64,15); printf("%c",60); cout << "Left" << endl;
+                GotoXY(64,16); printf("%c",62); cout << ":Right" << endl;
                 if (count == 50)
                 {
-                    SetColor(Magenta , Black);
-                    GotoXY(24,1);
+                    SetColor(Red, Black);
+                    GotoXY(18,15);
                     cout << "***YOU WON!!!***" << endl;
                     getch();
                     return(0);
@@ -315,9 +313,10 @@ int main()
             case WALL:
 
             case ending:
-                GotoXY(23,1);
-                printf("!!!!!YOU FAILED!!!!!");
-                getch();
+                SetColor(Red, Black);
+                GotoXY(23,12);
+                printf("G A M E   O V E R");
+                //getch();
                 break;
             }
 
