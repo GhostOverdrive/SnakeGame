@@ -1,9 +1,10 @@
 # SnakeGame
 Simple SnakeGame on C++
+
 System requipments:
 
-  Win XP or higher
+    Win XP or higher
   
-  C++ redistributables needed
+    C++ redistributables needed
   
-  keyboard
+    keyboard
